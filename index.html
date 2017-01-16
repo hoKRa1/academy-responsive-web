@@ -13,16 +13,21 @@
     <h1>Movie Choices</h1>
 
     <div class="content">
-      <p>Here are the movies you can vote on:</p>
+      <p>Here are the movies you can vote on <span class="vote-count">Votes<span></p>
 
       <div class="movie-container">
         <ul>
           <li v-for="movie in movies">
             <h3>{{ movie.name }}</h3>
             <em>{{ movie.length }} minutes</em>
+            <button id ="button" v-on:click="sendVote(movie.id)">VOTE NOW</button>
+            <span class="votes">{{ movie.votes }}</span>
           </li>
         </ul>
       </div>
+      <footer class="content-footer">
+        A HollyVote Production &copy
+      </footer>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
